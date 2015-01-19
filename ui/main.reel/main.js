@@ -10,11 +10,11 @@ var logger;
 var appender;
 
 // message variables
-var widgetPayloadSpan 		= "";
-var errorMessage 					= "";
-var widgetNameLaunched 		= "";
-var widgetChannel 				= "";
-var launchResultsMessage 	= "";
+var widgetPayloadSpan = "";
+var errorMessage = "";
+var widgetNameLaunched = "";
+var widgetChannel = "";
+var launchResultsMessage = "";
 
 var widgetToLaunch;
 
