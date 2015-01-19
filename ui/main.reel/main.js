@@ -40,16 +40,24 @@ var channelBookmarkUrlPayload = { "bookmarkUrl": "http://local.msmv.pdc.org:8080
 var overlayUrl = "http://plu.sx/kml/1.kml";
 // var overlayUrl = "plu.sx/kml/1.kml";
 
+/ initial data value for launch channel and payload - default setting
+data = {
+    channel: "org.pdc.bookmark.load",
+    payload: bookmarkIdPayload
+};
+
 
 // Search for the GUID corresponding to the 'widgetToLaunch' name
 // if successful call the launchSecondTracker function
 var lookupSecondTracker = function() {
+    console.log("inside lookupSecondTracker");
     var searchConfig = {
         searchParams:  { widgetName: widgetToLaunch }, 
         onSuccess: launchSecondTracker, 
         onFailure: failWidgetLookupError
     };
     logger.debug('Looking up:'+searchConfig.searchParams.widgetName);
+    console.log('Looking up:'+searchConfig.searchParams.widgetName);
 
     OWF.Preferences.findWidgets(searchConfig);
 };
@@ -57,8 +65,9 @@ var lookupSecondTracker = function() {
 // Launch the widget based on the found GUID
 // on success callback from lookupSecondTracker function
 var launchSecondTracker = function  (findResultsResponseJSON) {
-
+    console.log("inside launchSecondTracker");
     logger.debug('Search result:'+ findResultsResponseJSON);
+    console.log('Search result:'+ findResultsResponseJSON);
     if(findResultsResponseJSON.length == 0) {
         // Did not find Widget
         failWidgetLookupError("Widget was not found in user profile.  User may not have access.");
@@ -167,7 +176,8 @@ exports.Main = Component.specialize(/** @lends Main# */ {
 
     handleLaunchMeAction: {
         value: function (event) {
-            console.log("Launch Me clicked");
+            console.log("Launch Me clicked - calling lookupSecondTracker");
+            lookupSecondTracker();
         }
     }
 
