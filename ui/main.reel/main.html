@@ -2,21 +2,46 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Main</title>
-
+    <title>
+        Main
+    </title>
     <link rel="stylesheet" href="main.css">
-
     <script type="text/montage-serialization">
-        {
-            "owner": {
-                "properties": {
-                    "element": {"#": "main"}
-                }
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "main"}
             }
+        },
+        "app-title": {
+            "prototype": "digit/ui/title.reel",
+            "properties": {
+                "element": {"#": "app-title"},
+                "value": "DisasterAware Launcher"
+            }
+        },
+        "launchMe": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "launchMe"},
+                "enabled": true,
+                "label": "Launch DisasterAware"
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": true,
+                    "listener": {"@": "owner"}
+                }
+            ]
         }
+    }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main"></div>
+    <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <h1 data-montage-id="app-title"></h1>
+        <button data-montage-id="launchMe"></button>
+    </div>
 </body>
 </html>

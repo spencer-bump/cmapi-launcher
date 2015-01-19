@@ -13,5 +13,12 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function Main() {
             this.super();
         }
+    },
+
+    handleLaunchMeAction: {
+        value: function (event) {
+            console.log("Launch Me clicked");
+        }
     }
+
 });
