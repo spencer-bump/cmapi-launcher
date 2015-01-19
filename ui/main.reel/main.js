@@ -40,7 +40,7 @@ var channelBookmarkUrlPayload = { "bookmarkUrl": "http://local.msmv.pdc.org:8080
 var overlayUrl = "http://plu.sx/kml/1.kml";
 // var overlayUrl = "plu.sx/kml/1.kml";
 
-/ initial data value for launch channel and payload - default setting
+// initial data value for launch channel and payload - default setting
 data = {
     channel: "org.pdc.bookmark.load",
     payload: bookmarkIdPayload
