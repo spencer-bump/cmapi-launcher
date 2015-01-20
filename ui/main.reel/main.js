@@ -177,6 +177,9 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     handleLaunchMeAction: {
         value: function (event) {
             console.log("Launch Me clicked - calling lookupSecondTracker");
+            
+            widgetToLaunch = widgetOne; // "MSMV"
+            //widgetToLaunch = widgetTwo; // "MSMV Trunk"
             lookupSecondTracker();
         }
     }
